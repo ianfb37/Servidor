@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inserción</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">Control Diabetes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="formulario.html">Agregar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Eliminar/eliminar.html">Eliminar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Modificar/mostrar.php">Modificar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mostrar.php">Mostrar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h1 class="text-center mb-4">Formulario de Inserción</h1>
+
+        <div class="text-center mb-4">
+            <button class="btn btn-primary toggle-form" data-target="#comidaForm">Comida</button>
+            <button class="btn btn-primary toggle-form" data-target="#controlGlucosaForm">Control de Glucosa</button>
+            <button class="btn btn-primary toggle-form" data-target="#hiperglucemiaForm">Hiperglucemia</button>
+            <button class="btn btn-primary toggle-form" data-target="#hipoglucemiaForm">Hipoglucemia</button>
+        </div>
+
+        <div id="comidaForm" class="form-container collapse">
+            <form action="insertar_comida.php" method="POST" class="mb-4">
+                <div class="form-group">
+                    <select name="tipo_comida" class="form-control" required>
+                        <option value="" disabled selected>Seleccione Tipo de Comida</option>
+                        <option value="Desayuno">Desayuno</option>
+                        <option value="Comida">Comida</option>
+                        <option value="Cena">Cena</option>
+                        <option value="Merienda">Merienda</option>
+                        <option value="Almuerzo">Almuerzo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="raciones" class="form-control" placeholder="Raciones" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="glucosa_1" class="form-control" placeholder="Glucosa 1" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="glucosa_2" class="form-control" placeholder="Glucosa 2" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="insulina" class="form-control" placeholder="Insulina" required>
+                </div>
+                <button type="submit" class="btn btn-success">Insertar Comida</button>
+            </form>
+        </div>
+
+        <div id="controlGlucosaForm" class="form-container collapse">
+            <form action="insertar_control_glucosa.php" method="POST" class="mb-4">
+                <div class="form-group">
+                    <input type="text" name="deporte" class="form-control" placeholder="Deporte" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="indice_actividad" class="form-control" placeholder="Lenta" required>
+                </div>
+                <button type="submit" class="btn btn-success">Insertar Control de Glucosa</button>
+            </form>
+        </div>
+
+        <div id="hiperglucemiaForm" class="form-container collapse">
+            <form action="insertar_hiperglucemia.php" method="POST" class="mb-4">
+                <div class="form-group">
+                    <select name="tipo_comida" class="form-control" required>
+                        <option value="" disabled selected>Seleccione Tipo de Comida</option>
+                        <option value="Desayuno">Desayuno</option>
+                        <option value="Comida">Comida</option>
+                        <option value="Cena">Cena</option>
+                        <option value="Merienda">Merienda</option>
+                        <option value="Almuerzo">Almuerzo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="glucosa" class="form-control" placeholder="Glucosa" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" name="fecha" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="time" name="hora" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="correccion" class="form-control" placeholder="Corrección" required>
+                </div>
+                <button type="submit" class="btn btn-success">Insertar Hiperglucemia</button>
+            </form>
+        </div>
+
+        <div id="hipoglucemiaForm" class="form-container collapse">
+            <form action="insertar_hipoglucemia.php" method="POST" class="mb-4">
+                <div class="form-group">
+                    <select name="tipo_comida" class="form-control" required>
+                        <option value="" disabled selected>Seleccione Tipo de Comida</option>
+                        <option value="Desayuno">Desayuno</option>
+                        <option value="Comida">Comida</option>
+                        <option value="Cena">Cena</option>
+                        <option value="Merienda">Merienda</option>
+                        <option value="Almuerzo">Almuerzo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="glucosa" class="form-control" placeholder="Glucosa" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" name="fecha" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="time" name="hora" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success">Insertar Hipoglucemia</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('.toggle-form').click(function() {
+                const target = $(this).data('target');
+                $(target).collapse('toggle'); 
+                $('.form-container').not(target).collapse('hide');
+                $('.toggle-form').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .form-container {
+            margin-bottom: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .toggle-form {
+            margin: 5px;
+            min-width: 200px;
+        }
+        .toggle-form.active {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+    </style>
+</body>
+</html>
